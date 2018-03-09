@@ -11,6 +11,13 @@ import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
+import TandCSurf from '../pages/TandCSurf';
+import TandCLogo from '../components/TandCLogo';
+import Est1971 from '../components/Est1971';
+import SocialMediaMenu from '../components/SocialMediaMenu';
+import TopMenu from '../components/TopMenu';
+import FooterMenu from '../components/FooterMenu';
+import FooterImage from '../components/FooterImage';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -22,19 +29,15 @@ class App extends React.Component {
     return (
         <Router>
           <div>
-            <NavBar/>
+            <TandCLogo/>
+            <SocialMediaMenu/>
+            <TopMenu/>
             <Switch>
-              <Route exact path="/" component={Landing}/>
-              <Route path="/signin" component={Signin}/>
-              <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/list" component={ListStuff}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
-              <ProtectedRoute path="/signout" component={Signout}/>
+              <Route exact path="/" component={TandCSurf}/>
               <Route component={NotFound}/>
             </Switch>
-            <Footer/>
+            <FooterMenu/>
+            <FooterImage/>
           </div>
         </Router>
     );
